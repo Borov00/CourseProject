@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-//ZDAROVA EPTA
+//ZDAROVA EPTA YURA
 
 const express = require('express');
 const compression = require('compression');
@@ -49,7 +49,9 @@ const passportConfig = require('./config/passport');
  */
 const app = express();
 router.get("/qqq",function(req,res){
-
+	res.json{[
+			{id: 1 , name: Da}
+		]}
 });
 
 
