@@ -3,7 +3,7 @@
  */
 
 //ZDAROVA EPTA YURA
-
+	
 const express = require('express');
 const compression = require('compression');
 const session = require('express-session');
@@ -48,11 +48,7 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
-router.get("/qqq",function(req,res){
-	res.json{[
-			{id: 1 , name: Da}
-		]}
-});
+
 
 
 /**
@@ -126,6 +122,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js'), { maxAge: 31557600000 }));
@@ -135,6 +132,13 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
 /**
  * Primary app routes.
  */
+ app.get("/qqq",function(req,res){
+  console.log("asdfasdf");
+  res.json([
+      {id: 1 , name: "Da"}
+    ]);
+
+});
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
