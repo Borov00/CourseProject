@@ -22,6 +22,7 @@ const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
+const router =express.Router();
 
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
@@ -47,6 +48,10 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
+router.get("/qqq",function(req,res){
+
+});
+
 
 /**
  * Connect to MongoDB.
